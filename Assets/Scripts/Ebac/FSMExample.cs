@@ -16,7 +16,7 @@ public class FSMExample : MonoBehaviour
 
     private void Start()
     {
-        stateMachine = new StateMachine<ExampleEnum>(ExampleEnum.STATE_ONE);
+        stateMachine = new StateMachine<ExampleEnum>();
         stateMachine.Init();
         stateMachine.RegisterStates(ExampleEnum.STATE_ONE, new StateBase());
         stateMachine.RegisterStates(ExampleEnum.STATE_TWO, new StateBase());
