@@ -17,9 +17,15 @@ namespace Ebac.StateMachine
             get { return _currentState; }
         }
 
-        public void Init()
+        public StateMachine(T state)
         {
             dictionaryState = new Dictionary<T, StateBase>();
+            SwitchState(state);
+        }
+
+       public void Init()
+        {
+
         }
 
         public void RegisterStates(T typeEnum, StateBase state)
