@@ -1,7 +1,7 @@
 using System.Linq;
 using UnityEditor;
 
-[CustomEditor(typeof(FSMExample))]
+[CustomEditor(typeof(GameManager))]
 public class GameManagerEditor : Editor
 {
     public bool showFoldout;
@@ -32,7 +32,6 @@ public class GameManagerEditor : Editor
             {
                 var keys = fsm.stateMachine.dictionaryState.Keys.ToArray();
                 var vals = fsm.stateMachine.dictionaryState.Values.ToArray();
-
 
                 for (int i = 0; i < keys.Length; i++)
                 {
