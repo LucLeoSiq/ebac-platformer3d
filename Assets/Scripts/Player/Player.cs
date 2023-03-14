@@ -8,14 +8,22 @@ public class Player : MonoBehaviour
 {
     public CharacterController characterController;
     public float speed = 1f;
-    public float turnSpeed = 1f;
+    public float turnSpeed = 300f;
+    public float gravity = 9.8f;
+
+    private float vSpeed = 0f;
 
     void Update()
     {
+        // Allows for the rotation of gameobject when pressing Horizontal keys.
         transform.Rotate(0, Input.GetAxis("Horizontal") * turnSpeed* Time.deltaTime, 0);
-        
-        // Makes object which script is attached move vertically.
+
+        // Allows for the forward movement of gameobject when pressing vertical keys.
         var speedVector = transform.forward * Input.GetAxis("Vertical") * speed;
+
+        // Implements gravity for player character
+        vSpeed -= gravity * Time.deltaTime;
+        speedVector.y = vSpeed;
 
         characterController.Move(speedVector * Time.deltaTime);
     }
