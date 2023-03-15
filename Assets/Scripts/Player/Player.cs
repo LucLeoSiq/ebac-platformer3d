@@ -22,10 +22,17 @@ public class Player : MonoBehaviour
         // Allows for the forward movement of gameobject when pressing vertical keys.
         var speedVector = transform.forward * Input.GetAxis("Vertical") * speed;
 
-        if(Input.GetKeyDown(KeyCode.Space)) 
+        // Jump if Key is pressed and character is grounded.
+        if (characterController.isGrounded)
         {
-            vSpeed = jumpSpeed;
+            vSpeed = 0;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                vSpeed = jumpSpeed;
+            }
         }
+
+
 
 
         // Implements gravity for player character
