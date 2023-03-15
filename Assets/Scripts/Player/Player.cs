@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public float speed = 1f;
     public float turnSpeed = 300f;
     public float gravity = 9.8f;
+    public float jumpSpeed = 15f;
 
     private float vSpeed = 0f;
 
@@ -20,6 +21,12 @@ public class Player : MonoBehaviour
 
         // Allows for the forward movement of gameobject when pressing vertical keys.
         var speedVector = transform.forward * Input.GetAxis("Vertical") * speed;
+
+        if(Input.GetKeyDown(KeyCode.Space)) 
+        {
+            vSpeed = jumpSpeed;
+        }
+
 
         // Implements gravity for player character
         vSpeed -= gravity * Time.deltaTime;
