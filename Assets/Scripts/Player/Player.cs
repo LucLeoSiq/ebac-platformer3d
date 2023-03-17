@@ -12,7 +12,11 @@ public class Player : MonoBehaviour
     public float speed = 1f;
     public float turnSpeed = 300f;
     public float gravity = 9.8f;
-    public float jumpSpeed = 15f;
+    public float jumpSpeed = 1.5f;
+
+    [Header("Run Setup")]
+    public KeyCode keyrun = KeyCode.LeftShift;
+    public float speedRun = 15f;
 
     private float vSpeed = 0f;
 
@@ -35,6 +39,22 @@ public class Player : MonoBehaviour
             }
         }
 
+        // Increases player speed when the run key is pressed
+        var isWalking = InputAxisVertical != 0;
+
+        if (isWalking)
+        {
+            if (Input.GetKey(keyrun))
+            {
+                speedVector *= speedRun;
+                animator.speed = speedRun;
+            }
+            else
+            {
+                animator.speed = 1;
+            }
+        }
+
         // Implements gravity for player character
         vSpeed -= gravity * Time.deltaTime;
         speedVector.y = vSpeed;
@@ -42,6 +62,7 @@ public class Player : MonoBehaviour
         characterController.Move(speedVector * Time.deltaTime);
 
         // Plays running animation if player character is moving forward or backwards
-        animator.SetBool("Run", InputAxisVertical != 0);
+        animator.SetBool("Run", isWalking);
+
     }
 }

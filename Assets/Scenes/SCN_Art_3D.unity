@@ -2733,6 +2733,8 @@ MonoBehaviour:
   turnSpeed: 300
   gravity: 30
   jumpSpeed: 15
+  keyrun: 304
+  speedRun: 1.5
 --- !u!1001 &629388096
 PrefabInstance:
   m_ObjectHideFlags: 0
