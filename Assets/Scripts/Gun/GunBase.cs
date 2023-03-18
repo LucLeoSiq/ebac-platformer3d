@@ -6,17 +6,10 @@ public class GunBase : MonoBehaviour
 {
     public ProjectileBase prefabProjectile;
     public Transform positionToShoot;
-    public Transform playerSideReverse;
-    public AudioSource gunShootSound;
 
     public float timeBetweenShoot = .3f;
 
     private Coroutine _currentCoroutine;
-
-    private void Awake()
-    {
-        playerSideReverse = GameObject.FindObjectOfType<Player>().transform;
-    }
 
     // Update is called once per frame
     void Update()
@@ -56,7 +49,5 @@ public class GunBase : MonoBehaviour
 
         var projectile = Instantiate(prefabProjectile);
         projectile.transform.position = positionToShoot.position;
-        //projectile.side = playerSideReverse.transform.localScale.x; 
-        projectile.side = GameObject.Find("Player").transform.localScale.x;
     }
 }
