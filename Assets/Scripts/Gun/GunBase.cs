@@ -45,8 +45,6 @@ public class GunBase : MonoBehaviour
     /// </summary>
     public void Shoot()
     {
-        if (gunShootSound != null) gunShootSound.Play();
-
         var projectile = Instantiate(prefabProjectile);
         projectile.transform.position = positionToShoot.position;
     }
