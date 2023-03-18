@@ -1429,7 +1429,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290734784}
-  m_LocalRotation: {x: 0.110360555, y: 0.00024237896, z: -0.000026913474, w: 0.9938916}
+  m_LocalRotation: {x: 0.11036037, y: 0.0018494517, z: -0.00020536095, w: 0.9938899}
   m_LocalPosition: {x: 423.38, y: -3.3393846, z: 37.914948}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2674,6 +2674,7 @@ GameObject:
   - component: {fileID: 605560105}
   - component: {fileID: 605560106}
   - component: {fileID: 605560104}
+  - component: {fileID: 605560107}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2736,6 +2737,43 @@ MonoBehaviour:
   jumpSpeed: 15
   keyrun: 304
   speedRun: 1.5
+--- !u!114 &605560107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605560102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd65dc21886a45a4ead68bf06d62cf31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootAction:
+    m_Name: Shoot
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 833edf65-1fd6-4fa5-b1cb-436a844764f8
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: a54c2ef9-3bed-43c4-baa1-c81b5ffb23b0
+      m_Path: <Keyboard>/x
+      m_Interactions: Press
+      m_Processors: 
+      m_Groups: 
+      m_Action: Shoot
+      m_Flags: 0
+    - m_Name: 
+      m_Id: b38f62cd-5630-4e99-ba2d-cf173bc1b382
+      m_Path: <Keyboard>/enter
+      m_Interactions: Press
+      m_Processors: 
+      m_Groups: 
+      m_Action: Shoot
+      m_Flags: 0
+    m_Flags: 0
 --- !u!1001 &629388096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7696,7 +7734,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500100153}
-  m_LocalRotation: {x: 0.110360555, y: 0.00024237896, z: -0.000026913474, w: 0.9938916}
+  m_LocalRotation: {x: 0.11036037, y: 0.0018494517, z: -0.00020536095, w: 0.9938899}
   m_LocalPosition: {x: 423.38, y: -3.3393846, z: 37.914948}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
