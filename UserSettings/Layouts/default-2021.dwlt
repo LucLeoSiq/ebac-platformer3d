@@ -101,7 +101,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 7609
+  controlID: 19
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -277,7 +277,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 7610
+  controlID: 122
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 7611
+  controlID: 97
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -334,7 +334,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -3392
+  m_LastSelectedObjectID: 23906
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -368,14 +368,14 @@ MonoBehaviour:
     - {fileID: -5784612219669818461, guid: d3f81c02a345e3a41a447e4b81d36d30, type: 2}
     - {fileID: -4853182588549259545, guid: c603fec074e213346a3d572a98441a6a, type: 2}
     m_ValueSerializationHelper:
-    - e00: 0.7031579
+    - e00: 0.6718718
       e01: 0
       e02: 0
-      e03: -20.157928
+      e03: -27.666214
       e10: 0
-      e11: 0.7031579
+      e11: 0.6718718
       e12: 0
-      e13: 149.55789
+      e13: 142.23865
       e20: 0
       e21: 0
       e22: 1
@@ -457,22 +457,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Art/3D/Astronaut/Animations
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets
+  - Assets/Art/3D/Astronaut/Animations
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\lucas\UnityProjects\ebac-platformer3d
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 10}
-    m_SelectedIDs: 6a630000
-    m_LastClickedID: 25450
-    m_ExpandedIDs: 000000006a630000826300008c630000b8630000bc630000
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: ee650000
+    m_LastClickedID: 26094
+    m_ExpandedIDs: 000000008e630000be630000c8630000e2650000e6650000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -500,7 +500,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000006a630000
+    m_ExpandedIDs: 000000008e630000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -627,10 +627,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 654}
-      m_SelectedIDs: c0f2ffff
-      m_LastClickedID: -3392
-      m_ExpandedIDs: c0f2ffff16fbffff445d0000fc5d0000ea5e0000
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 625d0000
+      m_LastClickedID: 23906
+      m_ExpandedIDs: 16fbffff625d0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -879,9 +879,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 416.09872, y: -30.920317, z: 107.250275}
+    m_Target: {x: 422.58417, y: -5.673587, z: 48.492455}
     speed: 2
-    m_Value: {x: 416.09872, y: -30.920317, z: 107.250275}
+    m_Value: {x: 422.58417, y: -5.673587, z: 48.492455}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -928,20 +928,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.18647747, y: -0.048613876, z: 0.009241368, w: 0.98120606}
+    m_Target: {x: -0.013392444, y: -0.91962445, z: -0.031450715, w: 0.39129782}
     speed: 2
-    m_Value: {x: 0.1864786, y: -0.04861417, z: 0.009241424, w: 0.981212}
+    m_Value: {x: -0.013392501, y: -0.9196283, z: -0.03145085, w: 0.3912995}
   m_Size:
-    m_Target: 36.807896
+    m_Target: 7.8224907
     speed: 2
-    m_Value: 36.807896
+    m_Value: 7.8224907
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 1
-    m_SpeedNormalized: 0.5
+    m_Speed: 0.70065
+    m_SpeedNormalized: 0.35
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
