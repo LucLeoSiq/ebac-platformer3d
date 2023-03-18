@@ -1,16 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class ProjectileBase : MonoBehaviour
-{
-    public Vector3 direction;
-    
+{  
     public float timeToDestroy = 2f;
-    public float side = 1;
     public int damageAmount = 1;
-
+    public float speed = 50f;
 
     private void Awake()
     {
@@ -19,18 +15,12 @@ public class ProjectileBase : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(direction * Time.deltaTime * side);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        var enemy = collision.transform.GetComponent<EnemyBase>();
 
-        if (enemy != null)
-        {
-            enemy.Damage(damageAmount);
-            Destroy(gameObject);
-        }
     }
 
 }
