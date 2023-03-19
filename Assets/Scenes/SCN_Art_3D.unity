@@ -2735,7 +2735,7 @@ MonoBehaviour:
   turnSpeed: 300
   gravity: 30
   jumpSpeed: 15
-  keyrun: 304
+  keyrun: 266
   speedRun: 1.5
 --- !u!114 &605560107
 MonoBehaviour:
@@ -2751,8 +2751,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootAction:
     m_Name: Shoot
-    m_Type: 0
-    m_ExpectedControlType: 
+    m_Type: 1
+    m_ExpectedControlType: Button
     m_Id: 833edf65-1fd6-4fa5-b1cb-436a844764f8
     m_Processors: 
     m_Interactions: 

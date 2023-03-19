@@ -8,7 +8,7 @@ public class PlayerAbilityBase : MonoBehaviour
 
     private void Start()
     {
-        RemoveListeners();
+        Init();
         OnValidate();
         RegisterListeners();
     }
