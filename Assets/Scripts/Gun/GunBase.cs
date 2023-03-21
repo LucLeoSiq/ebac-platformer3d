@@ -17,7 +17,7 @@ public class GunBase : MonoBehaviour
     {
         if (Input.GetKeyDown(shootKey))
         {
-            _currentCoroutine = StartCoroutine(StartShoot());
+            _currentCoroutine = StartCoroutine(ShootCoroutine());
         }
         else if (Input.GetKeyUp(shootKey))
         {
@@ -32,7 +32,7 @@ public class GunBase : MonoBehaviour
     /// Waits for a set amount of time before instantiating a new projectile.
     /// </summary>
     /// <returns></returns>
-    IEnumerator StartShoot()
+    protected virtual IEnumerator ShootCoroutine()
     {
         while (true)
         {
@@ -46,8 +46,20 @@ public class GunBase : MonoBehaviour
     /// </summary>
     public void Shoot()
     {
-        var projectile = Instantiate(prefabProjectile);
+        var projectile = Instantiate(prefabProjectile); 
         projectile.transform.position = positionToShoot.position;
         projectile.transform.rotation = positionToShoot.rotation;
+    }
+
+    public void StartShoot()
+    {
+        StopShoot();
+        _currentCoroutine = StartCoroutine(ShootCoroutine());
+    }
+
+    public void StopShoot()
+    {
+        if (_currentCoroutine != null)
+            StopCoroutine(_currentCoroutine);
     }
 }
