@@ -2,32 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Windows;
 
 public class PlayerAbilityShoot : PlayerAbilityBase
 {
-    public InputAction shootAction;
+    public GunBase gunBase;
 
     protected override void Init()
     {
         base.Init();
 
-        // Quando o shootAction for performado, chamar o Shoot()
-        shootAction.performed += ctx => Shoot();
+        inputs.Gameplay.Shoot.performed += cts => StartShoot();
+        inputs.Gameplay.Shoot.canceled += cts => CancelShoot();
     }
 
-    private void OnEnable()
+    private void StartShoot()
     {
-        shootAction.Enable();
+        Debug.Log("Start Shoot");
     }
 
-    private void OnDisable()
+    private void CancelShoot()
     {
-        shootAction.Disable();
-    }
-
-    private void Shoot()
-    {
-        Debug.Log("Shoot");
+        Debug.Log("Cancel Shoot")
     }
 
 }
