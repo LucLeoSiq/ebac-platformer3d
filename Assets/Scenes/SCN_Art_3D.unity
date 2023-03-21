@@ -1429,7 +1429,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290734784}
-  m_LocalRotation: {x: 0.11036037, y: 0.0018819291, z: -0.00020896719, w: 0.99388987}
+  m_LocalRotation: {x: 0.11036037, y: 0.0018819289, z: -0.00020896718, w: 0.99388987}
   m_LocalPosition: {x: 423.38, y: -3.3393846, z: 37.914948}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2750,31 +2750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd65dc21886a45a4ead68bf06d62cf31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootAction:
-    m_Name: Shoot
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 833edf65-1fd6-4fa5-b1cb-436a844764f8
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: a54c2ef9-3bed-43c4-baa1-c81b5ffb23b0
-      m_Path: <Keyboard>/x
-      m_Interactions: Press
-      m_Processors: 
-      m_Groups: 
-      m_Action: Shoot
-      m_Flags: 0
-    - m_Name: 
-      m_Id: b38f62cd-5630-4e99-ba2d-cf173bc1b382
-      m_Path: <Keyboard>/enter
-      m_Interactions: Press
-      m_Processors: 
-      m_Groups: 
-      m_Action: Shoot
-      m_Flags: 0
-    m_Flags: 0
+  gunBase: {fileID: 845961015}
 --- !u!1001 &629388096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4119,7 +4095,6 @@ MonoBehaviour:
   prefabProjectile: {fileID: 165615417282111319, guid: 7c0d1490f93f3394492559d35070facb, type: 3}
   positionToShoot: {fileID: 810577770}
   timeBetweenShoot: 0.3
-  shootKey: 101
   maxShoot: 5
   timeToRecharge: 0.3
 --- !u!65 &845961016
@@ -6407,7 +6382,6 @@ MonoBehaviour:
   prefabProjectile: {fileID: 165615417282111319, guid: 7c0d1490f93f3394492559d35070facb, type: 3}
   positionToShoot: {fileID: 1923182396}
   timeBetweenShoot: 0.3
-  shootKey: 101
 --- !u!65 &1236114597
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7883,7 +7857,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500100153}
-  m_LocalRotation: {x: 0.11036037, y: 0.0018819291, z: -0.00020896719, w: 0.99388987}
+  m_LocalRotation: {x: 0.11036037, y: 0.0018819289, z: -0.00020896718, w: 0.99388987}
   m_LocalPosition: {x: 423.38, y: -3.3393846, z: 37.914948}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

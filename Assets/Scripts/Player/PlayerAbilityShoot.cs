@@ -18,12 +18,14 @@ public class PlayerAbilityShoot : PlayerAbilityBase
 
     private void StartShoot()
     {
+        gunBase.StartShoot();
         Debug.Log("Start Shoot");
     }
 
     private void CancelShoot()
     {
-        Debug.Log("Cancel Shoot")
+        Debug.Log("Cancel Shoot");
+        gunBase.StopShoot();
     }
 
 }

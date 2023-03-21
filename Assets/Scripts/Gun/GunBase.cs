@@ -8,25 +8,8 @@ public class GunBase : MonoBehaviour
     public Transform positionToShoot;
 
     public float timeBetweenShoot = .3f;
-    public KeyCode shootKey = KeyCode.E;
 
     private Coroutine _currentCoroutine;
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(shootKey))
-        {
-            _currentCoroutine = StartCoroutine(ShootCoroutine());
-        }
-        else if (Input.GetKeyUp(shootKey))
-        {
-            if (_currentCoroutine != null)
-            {
-                StopCoroutine(_currentCoroutine);
-            }
-        }
-    }
 
     /// <summary>
     /// Waits for a set amount of time before instantiating a new projectile.
