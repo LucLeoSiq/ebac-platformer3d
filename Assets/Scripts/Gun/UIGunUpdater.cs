@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,12 @@ using UnityEngine.UI;
 public class UIGunUpdater : MonoBehaviour
 {
     public Image uiImage;
+
+    [Header("Animation")]
+    public float duration = .1f;
+    public Ease ease = Ease.OutBack;
+
+    private Tween _currTween;
 
     private void OnValidate()
     {
@@ -19,6 +26,7 @@ public class UIGunUpdater : MonoBehaviour
 
     public void UpdateValue(float max, float current)
     {
-        uiImage.fillAmount = current / max;
+        if (_currTween != null) _currTween.Kill();
+        uiImage.DOFillAmount(1 - (current / max), duration).SetEase(ease);
     }
 }
