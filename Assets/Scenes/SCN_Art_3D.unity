@@ -1359,7 +1359,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290734784}
-  m_LocalRotation: {x: 0.11036037, y: 0.0018819303, z: -0.00020896734, w: 0.99388987}
+  m_LocalRotation: {x: 0.110360354, y: 0.0018531205, z: -0.00020576829, w: 0.9938899}
   m_LocalPosition: {x: 423.38, y: -3.3393846, z: 37.914948}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5224,6 +5224,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7078191225221647300, guid: 86b7b39982ad83749bbfdda682198c90, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078191225221647300, guid: 86b7b39982ad83749bbfdda682198c90, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078191225221647300, guid: 86b7b39982ad83749bbfdda682198c90, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078191225221647300, guid: 86b7b39982ad83749bbfdda682198c90, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -5269,6 +5281,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86b7b39982ad83749bbfdda682198c90, type: 3}
+--- !u!95 &969931445 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8490908861997458674, guid: 86b7b39982ad83749bbfdda682198c90, type: 3}
+  m_PrefabInstance: {fileID: 969931444}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &980793272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5544,6 +5561,7 @@ GameObject:
   - component: {fileID: 1035243586}
   - component: {fileID: 1035243587}
   - component: {fileID: 1035243588}
+  - component: {fileID: 1035243589}
   m_Layer: 0
   m_Name: Enemy 01
   m_TagString: Untagged
@@ -5560,7 +5578,7 @@ Transform:
   m_GameObject: {fileID: 1035243585}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 410.8922, y: -3.7194974, z: 57.47726}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1124942953}
@@ -5581,6 +5599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startLife: 10
   _currentLife: 0
+  _animationBase: {fileID: 1035243589}
   startAnimationDuration: 0.2
   startAnimationEase: 27
   startWithBornAnimation: 1
@@ -5597,6 +5616,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.583313, y: 3.7597005, z: 2.546383}
   m_Center: {x: -0.06036377, y: -2.2466974, z: 0.059602737}
+--- !u!114 &1035243589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035243585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396dfe9aa476f144d9f88bc8bee7b59c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 969931445}
+  animationSetups:
+  - animationType: 1
+    trigger: Idle
+  - animationType: 2
+    trigger: Run
+  - animationType: 3
+    trigger: Attack
+  - animationType: 4
+    trigger: Death
 --- !u!1 &1084341300
 GameObject:
   m_ObjectHideFlags: 0
@@ -7809,7 +7850,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500100153}
-  m_LocalRotation: {x: 0.11036037, y: 0.0018819303, z: -0.00020896734, w: 0.99388987}
+  m_LocalRotation: {x: 0.110360354, y: 0.0018531205, z: -0.00020576829, w: 0.9938899}
   m_LocalPosition: {x: 423.38, y: -3.3393846, z: 37.914948}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
