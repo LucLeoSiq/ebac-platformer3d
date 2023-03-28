@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBase : MonoBehaviour
-{     
+public class EnemyBase : MonoBehaviour, IDamageable
+{
+    public Collider collider;
     public float startLife = 10f;
 
     [SerializeField] private float _currentLife;
@@ -42,6 +43,7 @@ public class EnemyBase : MonoBehaviour
 
     protected virtual void OnKill() 
     { 
+        if(collider != null) collider.enabled = false;
         Destroy(gameObject, 3f);
         PlayAnimationByTrigger(AnimationType.DEATH);
     }
@@ -73,5 +75,11 @@ public class EnemyBase : MonoBehaviour
         {
             OnDamage(5f);
         }
+    }
+
+    public void Damage(float damage)
+    {
+        Debug.Log("Damage");
+        OnDamage(damage);
     }
 }
