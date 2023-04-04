@@ -43,9 +43,9 @@ GameObject:
   - component: {fileID: 1763048863743682874}
   - component: {fileID: 4113827731849592476}
   - component: {fileID: 1442366116870552340}
-  - component: {fileID: 1958838548622251539}
+  - component: {fileID: 3221702299899825228}
   m_Layer: 0
-  m_Name: PFB_GunAngle
+  m_Name: PFB_GunBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,7 +130,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1958838548622251539
+--- !u!114 &3221702299899825228
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,12 +139,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7140904492657918679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b3249203078ab246a210d690cded1b1, type: 3}
+  m_Script: {fileID: 11500000, guid: df73935a2ef33f346b691ea063bc03f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   prefabProjectile: {fileID: 165615417282111319, guid: 7c0d1490f93f3394492559d35070facb, type: 3}
   positionToShoot: {fileID: 4106538246631722035}
   timeBetweenShoot: 0.3
   speed: 50
-  maxShoot: 5
-  timeToRecharge: 1

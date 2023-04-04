@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEditor.U2D;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDamageable
 {
     public Animator animator;
 
@@ -19,6 +19,18 @@ public class Player : MonoBehaviour
     public float speedRun = 15f;
 
     private float vSpeed = 0f;
+
+    [Header("Flash")]
+    public List<FlashColor> flashColors;
+    public void Damage(float damage)
+    {
+        flashColors.ForEach(i => i.Flash());
+    }
+
+    public void Damage(float damage, Vector3 dir)
+    {
+
+    }
 
     void Update()
     {
