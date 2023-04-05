@@ -1068,6 +1068,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1818947205}
     m_Modifications:
+    - target: {fileID: 1442366116870552340, guid: 94091d655372ddd4fa0a42f799335b92, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7140904492657918679, guid: 94091d655372ddd4fa0a42f799335b92, type: 3}
       propertyPath: m_Name
       value: PFB_GunBase
@@ -1078,15 +1082,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7632947069719137364, guid: 94091d655372ddd4fa0a42f799335b92, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.11
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 7632947069719137364, guid: 94091d655372ddd4fa0a42f799335b92, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.28
+      value: 2.81
       objectReference: {fileID: 0}
     - target: {fileID: 7632947069719137364, guid: 94091d655372ddd4fa0a42f799335b92, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.1
+      value: -1.87
       objectReference: {fileID: 0}
     - target: {fileID: 7632947069719137364, guid: 94091d655372ddd4fa0a42f799335b92, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1116,7 +1120,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1442366116870552340, guid: 94091d655372ddd4fa0a42f799335b92, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 94091d655372ddd4fa0a42f799335b92, type: 3}
 --- !u!1001 &170407204
 PrefabInstance:
@@ -7701,7 +7706,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1442366116870552340, guid: 94091d655372ddd4fa0a42f799335b92, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 94091d655372ddd4fa0a42f799335b92, type: 3}
 --- !u!1001 &1373902241
 PrefabInstance:
