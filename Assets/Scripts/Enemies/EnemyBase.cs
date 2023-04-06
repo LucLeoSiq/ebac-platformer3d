@@ -10,6 +10,7 @@ public class EnemyBase : MonoBehaviour, IDamageable
     public ParticleSystem particleSystem;
 
     public float startLife = 10f;
+    public bool lookAtPlayer = false;
 
     [SerializeField] private float _currentLife;
 
@@ -21,9 +22,16 @@ public class EnemyBase : MonoBehaviour, IDamageable
     public Ease startAnimationEase = Ease.OutBack;
     public bool startWithBornAnimation = true;
 
+    private Player _player;
+
     protected void Awake()
     {
         Init();
+    }
+
+    private void Start()
+    {
+        _player = GameObject.FindObjectOfType<Player>();
     }
 
     protected void ResetLife()
@@ -76,15 +84,6 @@ public class EnemyBase : MonoBehaviour, IDamageable
         _animationBase.PlayAnimationTrigger(animationType);
     }
 
-    // Debug
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            OnDamage(5f);
-        }
-    }
-
     public void Damage(float damage)
     {
         Debug.Log("Damage");
@@ -103,6 +102,14 @@ public class EnemyBase : MonoBehaviour, IDamageable
         if(p != null)
         {
             p.Damage(1);
+        }
+    }
+
+    public virtual void Update()
+    {
+        if(lookAtPlayer)
+        {
+            transform.LookAt(_player.transform.position);
         }
     }
 }
