@@ -19,6 +19,15 @@ public class BossStateInit : BossStateBase
     public override void OnStateEnter(params object[] objs)
     {
         base.OnStateEnter(objs);
-        Debug.Log("Boss: " + boss);
+        boss.StartInitAnimation();
+    }
+}
+
+public class BossStateWalk : BossStateBase
+{
+    public override void OnStateEnter(params object[] objs)
+    {
+        base.OnStateEnter(objs);
+        boss.GoToRandomPoint();
     }
 }
