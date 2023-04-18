@@ -35,7 +35,9 @@ public class BossBase : MonoBehaviour
 
         stateMachine.RegisterStates(BossAction.INIT, new BossStateInit());
         stateMachine.RegisterStates(BossAction.WALK, new BossStateWalk());
-                                                         
+        stateMachine.RegisterStates(BossAction.WALK, new BossStateAttack());
+
+
     }
 
     public void GoToRandomPoint()
