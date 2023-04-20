@@ -41,6 +41,7 @@ public class BossBase : MonoBehaviour
         stateMachine.RegisterStates(BossAction.INIT, new BossStateInit());
         stateMachine.RegisterStates(BossAction.WALK, new BossStateWalk());
         stateMachine.RegisterStates(BossAction.ATTACK, new BossStateAttack());
+
     }
 
     public void StartAttack()
@@ -55,7 +56,7 @@ public class BossBase : MonoBehaviour
         {
             attacks++;
             transform.DOScale(1.1f, .1f).SetLoops(2, LoopType.Yoyo);
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(timeBetweenAttacks);
         }
     }
 
