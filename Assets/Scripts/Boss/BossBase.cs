@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ebac.StateMachine;
 using DG.Tweening;
+using JetBrains.Annotations;
 
 public enum BossAction
 {
@@ -17,6 +18,10 @@ public class BossBase : MonoBehaviour
     [Header("Animation")]
     public float startAnimationDuration = .5f;
     public Ease startAnimationEase = Ease.OutBack;
+
+    [Header("Attack")]
+    public int attackAmount = 5;
+    public float timeBetweenAttacks;
 
     public float speed = 5f;
     public List<Transform> waypoints;
@@ -36,8 +41,22 @@ public class BossBase : MonoBehaviour
         stateMachine.RegisterStates(BossAction.INIT, new BossStateInit());
         stateMachine.RegisterStates(BossAction.WALK, new BossStateWalk());
         stateMachine.RegisterStates(BossAction.ATTACK, new BossStateAttack());
+    }
 
+    public void StartAttack()
+    {
+        StartCoroutine(AttackCoroutine());
+    }
 
+    IEnumerator AttackCoroutine()
+    {
+        int attacks = 0;
+        while(attacks < attackAmount)
+        {
+            attacks++;
+            transform.DOScale(1.1f, .1f).SetLoops(2, LoopType.Yoyo);
+            yield return new WaitForEndOfFrame();
+        }
     }
 
     public void GoToRandomPoint()
@@ -69,6 +88,12 @@ public class BossBase : MonoBehaviour
     private void SwitchWalk()
     {
         SwitchSate(BossAction.WALK);
+    }
+
+    [NaughtyAttributes.Button]
+    private void SwitchAttack()
+    {
+        SwitchSate(BossAction.ATTACK);
     }
 
     public void SwitchSate(BossAction state)
