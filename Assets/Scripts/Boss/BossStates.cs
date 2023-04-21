@@ -21,6 +21,7 @@ public class BossStateInit : BossStateBase
         base.OnStateEnter(objs);
         boss.StartInitAnimation();
     }
+
 }
 
 public class BossStateWalk : BossStateBase
@@ -28,7 +29,12 @@ public class BossStateWalk : BossStateBase
     public override void OnStateEnter(params object[] objs)
     {
         base.OnStateEnter(objs);
-        boss.GoToRandomPoint();
+        boss.GoToRandomPoint(OnArrive);
+    }
+
+    private void OnArrive()
+    {
+        boss.SwitchSate(BossAction.ATTACK);
     }
 }
 public class BossStateAttack : BossStateBase
@@ -36,6 +42,11 @@ public class BossStateAttack : BossStateBase
     public override void OnStateEnter(params object[] objs)
     {
         base.OnStateEnter(objs);
-        boss.StartAttack();
+        boss.StartAttack(EndAttacks);
+    }
+
+    private void EndAttacks()
+    {
+        boss.SwitchSate(BossAction.WALK);
     }
 }
