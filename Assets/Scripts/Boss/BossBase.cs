@@ -5,13 +5,15 @@ using UnityEngine;
 using Ebac.StateMachine;
 using DG.Tweening;
 using JetBrains.Annotations;
+using static BossStateAttack;
 
 public enum BossAction
 {
     INIT,
     IDLE, 
     WALK, 
-    ATTACK
+    ATTACK,
+    DEATH
 }
 
 public class BossBase : MonoBehaviour
@@ -27,11 +29,14 @@ public class BossBase : MonoBehaviour
     public float speed = 5f;
     public List<Transform> waypoints;
 
+    public HealthBase healthBase;
+
     private StateMachine<BossAction> stateMachine;
 
     private void Awake()
     {
         Init();
+        healthBase.OnKill += OnBossKill;
     }
 
     private void Init()
@@ -42,7 +47,14 @@ public class BossBase : MonoBehaviour
         stateMachine.RegisterStates(BossAction.INIT, new BossStateInit());
         stateMachine.RegisterStates(BossAction.WALK, new BossStateWalk());
         stateMachine.RegisterStates(BossAction.ATTACK, new BossStateAttack());
+        stateMachine.RegisterStates(BossAction.DEATH, new BossStateDeath());
 
+
+    }
+
+    private void OnBossKill(HealthBase h)
+    {
+        stateMachine.SwitchState(BossAction.DEATH);
     }
 
     public void StartAttack(Action endCallback = null)

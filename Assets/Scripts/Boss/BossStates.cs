@@ -49,4 +49,13 @@ public class BossStateAttack : BossStateBase
     {
         boss.SwitchSate(BossAction.WALK);
     }
+
+    public class BossStateDeath : BossStateBase
+    {
+        public override void OnStateEnter(params object[] objs)
+        {
+            base.OnStateEnter(objs);
+        }
+    }
+
 }
