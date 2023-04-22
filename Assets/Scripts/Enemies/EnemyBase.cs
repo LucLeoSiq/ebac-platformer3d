@@ -101,7 +101,7 @@ public class EnemyBase : MonoBehaviour, IDamageable
 
         if(p != null)
         {
-            p.Damage(1);
+           p.healthBase.Damage(1);
         }
     }
 
