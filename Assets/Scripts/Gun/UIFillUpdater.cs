@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIGunUpdater : MonoBehaviour
+public class UIFillUpdater : MonoBehaviour
 {
     public Image uiImage;
 

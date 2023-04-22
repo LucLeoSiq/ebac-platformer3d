@@ -6,7 +6,7 @@ using UnityEngine.Windows;
 
 public class PlayerAbilityShoot : PlayerAbilityBase
 {
-    public List<UIGunUpdater> uIGunUpdaters;
+    public List<UIFillUpdater> uIGuUpdaters;
 
     public GunBase gunBase;
     public Transform gunPosition;
