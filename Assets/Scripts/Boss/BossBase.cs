@@ -54,7 +54,7 @@ public class BossBase : MonoBehaviour
 
     private void OnBossKill(HealthBase h)
     {
-        stateMachine.SwitchState(BossAction.DEATH);
+        SwitchState(BossAction.DEATH);
     }
 
     public void StartAttack(Action endCallback = null)
@@ -98,22 +98,22 @@ public class BossBase : MonoBehaviour
     [NaughtyAttributes.Button]
     private void SwitchInit()
     {
-        SwitchSate(BossAction.INIT);
+        SwitchState(BossAction.INIT);
     }
 
     [NaughtyAttributes.Button]
     private void SwitchWalk()
     {
-        SwitchSate(BossAction.WALK);
+        SwitchState(BossAction.WALK);
     }
 
     [NaughtyAttributes.Button]
     private void SwitchAttack()
     {
-        SwitchSate(BossAction.ATTACK);
+        SwitchState(BossAction.ATTACK);
     }
 
-    public void SwitchSate(BossAction state)
+    public void SwitchState(BossAction state)
     {
         stateMachine.SwitchState(state, this);
     }

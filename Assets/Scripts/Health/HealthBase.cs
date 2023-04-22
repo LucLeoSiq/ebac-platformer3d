@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -30,6 +31,14 @@ public class HealthBase : MonoBehaviour
     {
         if(destroyOnKill)
             Destroy(gameObject, 3f);
+
+        OnKill?.Invoke(this);
+    }
+
+    [NaughtyAttributes.Button]
+    public virtual void Damage()
+    {
+        Damage(5);
     }
 
     public void Damage(float f)
@@ -40,5 +49,8 @@ public class HealthBase : MonoBehaviour
         {
             Kill();
         }
+
+        OnDamage?.Invoke(this);
+
     }
 }
