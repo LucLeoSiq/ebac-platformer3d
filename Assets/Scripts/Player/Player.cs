@@ -40,7 +40,7 @@ public class Player : MonoBehaviour//, IDamageable
         OnValidate();
 
         healthBase.OnDamage += Damage;
-        healthBase.OnDamage += OnKill;
+        healthBase.OnKill += OnKill;
 
     }
 
