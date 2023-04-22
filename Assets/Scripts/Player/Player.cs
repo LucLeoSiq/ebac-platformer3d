@@ -35,6 +35,13 @@ public class Player : MonoBehaviour//, IDamageable
         OnValidate();
 
         healthBase.OnDamage += Damage;
+        healthBase.OnDamage += OnKill;
+
+    }
+
+    private void OnKill(HealthBase h)
+    {
+        animator.SetTrigger("Death");
     }
 
     public void Damage(HealthBase h)
