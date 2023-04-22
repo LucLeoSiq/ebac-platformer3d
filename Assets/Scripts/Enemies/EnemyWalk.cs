@@ -1,3 +1,4 @@
+using Cinemachine.Editor;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,8 +12,10 @@ public class EnemyWalk : EnemyBase
 
     private int _index = 0;
 
-    void Update()
+
+    public override void Update()
     {
+        base.Update(); 
         if(Vector3.Distance(transform.position, waypoints[_index].transform.position) < minDistance)
         {
             _index++;
