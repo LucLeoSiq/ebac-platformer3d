@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -51,7 +52,26 @@ public class Player : MonoBehaviour//, IDamageable
             _alive = false;
             animator.SetTrigger("Death");
             colliders.ForEach(i => i.enabled = false);
+            Debug.Log("Colider Off"); 
+
+
+            Invoke(nameof(Revive), 3f);
         }
+    }
+
+    private void Revive()
+    {
+        _alive = true; 
+        healthBase.ResetLife();
+        animator.SetTrigger("Revive");
+        Respawn();
+        Invoke(nameof(TurnOnColliders), .1f);
+    }
+
+    private void TurnOnColliders()
+    {
+        colliders.ForEach(i => i.enabled = true);
+        Debug.Log("Colider On");
     }
 
     public void Damage(HealthBase h)
@@ -67,7 +87,7 @@ public class Player : MonoBehaviour//, IDamageable
     void Update()
     {
         // Allows for the rotation of gameobject when pressing Horizontal keys.
-        transform.Rotate(0, Input.GetAxis("Horizontal") * turnSpeed* Time.deltaTime, 0);
+        transform.Rotate(0, Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime, 0);
 
         // Allows for the forward movement of gameobject when pressing vertical keys.
         var InputAxisVertical = Input.GetAxis("Vertical");
@@ -107,6 +127,16 @@ public class Player : MonoBehaviour//, IDamageable
 
         // Plays running animation if player character is moving forward or backwards
         animator.SetBool("Run", isWalking);
-
     }
+
+    [NaughtyAttributes.Button]
+    public void Respawn()
+    {
+        if(CheckpointManager.Instance.HasCheckpoint())
+        {
+            transform.position = CheckpointManager.Instance.GetPositionFromLasCheckPoint();
+        }
+    }
+
+    
 }
