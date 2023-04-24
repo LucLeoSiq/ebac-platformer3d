@@ -1,11 +1,13 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.U2D;
 using UnityEngine;
 
-public class Player : MonoBehaviour, IDamageable
+public class Player : MonoBehaviour//, IDamageable
 {
+    public List<Collider> colliders;
     public Animator animator;
 
     public CharacterController characterController;
@@ -22,20 +24,70 @@ public class Player : MonoBehaviour, IDamageable
 
     [Header("Flash")]
     public List<FlashColor> flashColors;
-    public void Damage(float damage)
+
+    [Header("Life")]
+    public HealthBase healthBase;
+    public UIFillUpdater iuGunUpdater;
+
+    private bool _alive = true;
+
+         void OnValidate()
+    {
+        if (healthBase == null) healthBase = GetComponent<HealthBase>();
+    }
+
+    private void Awake()
+    {
+        OnValidate();
+
+        healthBase.OnDamage += Damage;
+        healthBase.OnKill += OnKill;
+
+    }
+
+    private void OnKill(HealthBase h)
+    {
+        if(_alive)
+        {
+            _alive = false;
+            animator.SetTrigger("Death");
+            colliders.ForEach(i => i.enabled = false);
+            Debug.Log("Colider Off"); 
+
+
+            Invoke(nameof(Revive), 3f);
+        }
+    }
+
+    private void Revive()
+    {
+        _alive = true; 
+        healthBase.ResetLife();
+        animator.SetTrigger("Revive");
+        Respawn();
+        Invoke(nameof(TurnOnColliders), .1f);
+    }
+
+    private void TurnOnColliders()
+    {
+        colliders.ForEach(i => i.enabled = true);
+        Debug.Log("Colider On");
+    }
+
+    public void Damage(HealthBase h)
     {
         flashColors.ForEach(i => i.Flash());
     }
 
     public void Damage(float damage, Vector3 dir)
     {
-        Damage(damage);
+        //Damage(damage);
     }
 
     void Update()
     {
         // Allows for the rotation of gameobject when pressing Horizontal keys.
-        transform.Rotate(0, Input.GetAxis("Horizontal") * turnSpeed* Time.deltaTime, 0);
+        transform.Rotate(0, Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime, 0);
 
         // Allows for the forward movement of gameobject when pressing vertical keys.
         var InputAxisVertical = Input.GetAxis("Vertical");
@@ -75,6 +127,16 @@ public class Player : MonoBehaviour, IDamageable
 
         // Plays running animation if player character is moving forward or backwards
         animator.SetBool("Run", isWalking);
-
     }
+
+    [NaughtyAttributes.Button]
+    public void Respawn()
+    {
+        if(CheckpointManager.Instance.HasCheckpoint())
+        {
+            transform.position = CheckpointManager.Instance.GetPositionFromLasCheckPoint();
+        }
+    }
+
+    
 }
