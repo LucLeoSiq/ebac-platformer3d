@@ -134,7 +134,9 @@ public class Player : MonoBehaviour//, IDamageable
     {
         if(CheckpointManager.Instance.HasCheckpoint())
         {
+            characterController.enabled = false;
             transform.position = CheckpointManager.Instance.GetPositionFromLasCheckPoint();
+            characterController.enabled = true;
         }
     }
 
