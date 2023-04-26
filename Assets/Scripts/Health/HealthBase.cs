@@ -46,6 +46,7 @@ public class HealthBase : MonoBehaviour, IDamageable
     public void Damage(float f)
     {
         _currentLife -= f;
+        ShakeCamera.Instance.Shake();
 
         if (_currentLife <= 0)
         {
