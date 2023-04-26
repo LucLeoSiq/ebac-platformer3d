@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MAT_Coin
+  m_Name: MAT_LifePack
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ValidKeywords:
   - _EMISSION
@@ -76,6 +76,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.6801932, b: 0.0141509175, a: 1}
-    - _EmissionColor: {r: 1, g: 0.41788515, b: 0.001214108, a: 1}
+    - _Color: {r: 0.3957789, g: 1, b: 0.015686274, a: 1}
+    - _EmissionColor: {r: 0.13013652, g: 1, b: 0.001214108, a: 1}
   m_BuildTextureStacks: []

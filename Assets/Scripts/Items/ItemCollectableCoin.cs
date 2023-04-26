@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Itens;
+using Items;
 
 public class ItemCollectableCoin : ItemCollectableBase
 {
