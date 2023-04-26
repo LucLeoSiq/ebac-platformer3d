@@ -77,6 +77,7 @@ public class Player : MonoBehaviour//, IDamageable
     public void Damage(HealthBase h)
     {
         flashColors.ForEach(i => i.Flash());
+        EffectsManager.Instance.ChangeVignette();
     }
 
     public void Damage(float damage, Vector3 dir)
@@ -127,6 +128,7 @@ public class Player : MonoBehaviour//, IDamageable
 
         // Plays running animation if player character is moving forward or backwards
         animator.SetBool("Run", isWalking);
+        animator.SetBool("Idle", !isWalking);
     }
 
     [NaughtyAttributes.Button]
