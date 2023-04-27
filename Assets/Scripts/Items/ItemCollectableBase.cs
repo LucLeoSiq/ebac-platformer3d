@@ -35,7 +35,7 @@ namespace Items
 
         protected virtual void Collect()
         {
-            if (collider != null) collider.enabled = false
+            if (collider != null) collider.enabled = false;
             if (graphicItem != null) graphicItem.SetActive(false); 
             Invoke("HideObject", timeToHide);
             OnCollect(); 
