@@ -6,7 +6,6 @@ using Items;
 
 public class ItemCollectableCoin : ItemCollectableBase
 {
-
     public Collider2D collider2D;
 
     protected override void OnCollect()
