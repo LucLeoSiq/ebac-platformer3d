@@ -1,3 +1,4 @@
+using Cloth;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,6 +14,8 @@ public class HealthBase : MonoBehaviour, IDamageable
     public Action<HealthBase> OnKill;
 
     public List<UIFillUpdater> uiGunUpdater;
+
+    public float damageMultiply = 1;
 
     public void Awake()
     {
@@ -46,7 +49,7 @@ public class HealthBase : MonoBehaviour, IDamageable
 
     public void Damage(float f)
     {
-        _currentLife -= f;
+        _currentLife -= f * damageMultiply;
         ShakeCamera.Instance.Shake();
 
         if (_currentLife <= 0)
@@ -70,4 +73,16 @@ public class HealthBase : MonoBehaviour, IDamageable
             uiGunUpdater.ForEach(i => i.UpdateValue((float)_currentLife / startLife));
         }
     }
+    public void ChangeDamageMultiply(float damage, float duration)
+    {
+        StartCoroutine(ChangeDamageMultiplyCoroutine(damageMultiply, duration));
+    }
+    
+    IEnumerator ChangeDamageMultiplyCoroutine(float damageMultiply, float duration)
+    {
+        this.damageMultiply = damageMultiply;
+        yield return new WaitForSeconds(duration);
+        this.damageMultiply = 1;
+    }
 }
+ 
