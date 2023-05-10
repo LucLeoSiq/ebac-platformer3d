@@ -581,7 +581,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74510116}
   m_LocalRotation: {x: 0.30007443, y: -0, z: -1.1641532e-10, w: 0.95391583}
-  m_LocalPosition: {x: -35.45996, y: 17.917473, z: 11.768271}
+  m_LocalPosition: {x: -35.46735, y: 17.906782, z: 11.720725}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2450,7 +2450,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 358057314}
-  m_LocalRotation: {x: 0.028471734, y: -0.0017788698, z: 0.00045355162, w: 0.9995929}
+  m_LocalRotation: {x: 0.02847172, y: -0.0017788343, z: 0.00045354257, w: 0.9995929}
   m_LocalPosition: {x: -0.80251265, y: 2.0368056, z: -5.3434086}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10580,14 +10580,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 828286944}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.1965027, y: 40.807877, z: -31.946976}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1491375152}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &838826015
 GameObject:
   m_ObjectHideFlags: 0
@@ -11458,7 +11458,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898382567}
-  m_LocalRotation: {x: -0.13142493, y: 0.61381197, z: -0.44537598, w: 0.6384376}
+  m_LocalRotation: {x: -0.13153264, y: 0.6134404, z: -0.4451062, w: 0.63896054}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -13055,7 +13055,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114304869}
-  m_LocalRotation: {x: -0.119821124, y: 0.6056313, z: -0.45643818, w: 0.64071673}
+  m_LocalRotation: {x: -0.11991928, y: 0.6052646, z: -0.45616177, w: 0.64124155}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -14354,7 +14354,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200299765}
-  m_LocalRotation: {x: 0.0003589158, y: 0.91279745, z: -0.40840852, w: 0.0017747893}
+  m_LocalRotation: {x: 0.00035890215, y: 0.91279745, z: -0.40840852, w: 0.0017747219}
   m_LocalPosition: {x: -0.882132, y: 6.591766, z: 16.099585}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -17204,8 +17204,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500100153}
-  m_LocalRotation: {x: 0.14858824, y: 0.7394799, z: -0.17351948, w: 0.6332315}
-  m_LocalPosition: {x: 387.97687, y: 11.559999, z: 53.457253}
+  m_LocalRotation: {x: 0.14871031, y: 0.73903376, z: -0.17341474, w: 0.63375205}
+  m_LocalPosition: {x: 387.9693, y: 11.559999, z: 53.408546}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18313,7 +18313,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1662104538}
-  m_LocalRotation: {x: -0.10814695, y: 0.59722865, z: -0.46737874, w: 0.64279026}
+  m_LocalRotation: {x: -0.108235605, y: 0.5968671, z: -0.4670957, w: 0.6433167}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -36141,7 +36141,7 @@ ParticleSystem:
   m_GameObject: {fileID: 2020661549}
   serializedVersion: 8
   lengthInSec: 2
-  simulationSpeed: 1
+  simulationSpeed: 2
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -36268,7 +36268,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
+      scalar: 0.1
       minScalar: 0.1
       maxCurve:
         serializedVersion: 2
@@ -36966,7 +36966,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2
