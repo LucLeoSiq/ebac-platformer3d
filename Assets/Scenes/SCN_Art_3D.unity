@@ -12109,7 +12109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesh: {fileID: 1772606642}
-  texture: {fileID: 2800000, guid: f44f93519e91297499eb5dd7b019b00c, type: 3}
+  texture: {fileID: 2800000, guid: d0101a61ba809b94ca9508759f8574dd, type: 3}
   shaderIdName: _EmissionMap
 --- !u!1001 &950019377
 PrefabInstance:
@@ -18313,7 +18313,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1662104538}
-  m_LocalRotation: {x: -0.108235605, y: 0.5968671, z: -0.4670957, w: 0.6433167}
+  m_LocalRotation: {x: -0.10823561, y: 0.59686714, z: -0.46709573, w: 0.6433167}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -28506,7 +28506,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727039242}
-  m_LocalRotation: {x: 0.05902602, y: -0.001740069, z: 0.0005008018, w: 0.9982548}
+  m_LocalRotation: {x: 0.05902602, y: -0.0017400321, z: 0.0005007911, w: 0.9982548}
   m_LocalPosition: {x: -0.79521936, y: 2.302491, z: -7.5350223}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -36146,7 +36146,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  emitterVelocityMode: 1
+  emitterVelocityMode: 0
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -36966,7 +36966,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 0
       minScalar: 10
       maxCurve:
         serializedVersion: 2
