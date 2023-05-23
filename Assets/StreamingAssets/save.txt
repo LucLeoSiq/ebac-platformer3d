@@ -1,4 +1,4 @@
 {
-    "lastLevel": 2,
-    "playerName": "Rafael"
+    "lastLevel": 5,
+    "playerName": ""
 }
