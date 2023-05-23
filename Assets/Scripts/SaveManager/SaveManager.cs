@@ -1,4 +1,3 @@
-using OpenCover.Framework.Model;
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,6 +14,15 @@ public class SaveManager : MonoBehaviour
 
         string setupToJson = JsonUtility.ToJson(setup, true);
         Debug.Log(setupToJson);
+        SaveFile(setupToJson);
+    }
+
+    private void SaveFile(string json)
+    {
+        string path = Application.streamingAssetsPath + "/save.txt";
+
+       Debug.Log(path);
+       File.WriteAllText(path, json);
     }
 
     [System.Serializable]
