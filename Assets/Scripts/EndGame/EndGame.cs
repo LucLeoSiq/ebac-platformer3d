@@ -7,7 +7,7 @@ using System.Xml.Xsl;
 public class EndGame : MonoBehaviour
 {
     public List<GameObject> endGameObjects;
-
+    
     private bool _endGame = false;
 
     public int currentLevel = 1;
