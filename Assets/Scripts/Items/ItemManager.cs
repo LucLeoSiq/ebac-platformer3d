@@ -5,7 +5,7 @@ using TMPro;
 using Ebac.Core.Singleton;
 using JetBrains.Annotations;
 
-namespace Itens
+namespace Items
 {
     public enum ItemType
     {
