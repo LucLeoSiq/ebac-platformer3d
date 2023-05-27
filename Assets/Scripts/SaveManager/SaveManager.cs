@@ -6,7 +6,8 @@ using Ebac.Core.Singleton;
 
 public class SaveManager : Singleton<SaveManager>
 {
-    private SaveSetup _saveSetup;
+    [SerializeField] private SaveSetup _saveSetup;
+    private string _path = Application.streamingAssetsPath + "/save.txt";
 
     protected override void Awake()
     {
@@ -47,10 +48,18 @@ public class SaveManager : Singleton<SaveManager>
 
     private void SaveFile(string json)
     {
-        string path = Application.streamingAssetsPath + "/save.txt";
+       Debug.Log(_path);
+       File.WriteAllText(_path, json);
+    }
 
-       Debug.Log(path);
-       File.WriteAllText(path, json);
+    [NaughtyAttributes.Button]
+    private void Load()
+    {
+        string fileLoaded = "";
+
+        if (File.Exists(_path)) fileLoaded = File.ReadAllText(_path);
+
+        _saveSetup = JsonUtility.FromJson<SaveSetup>(fileLoaded);
     }
 
     [NaughtyAttributes.Button]
