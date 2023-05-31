@@ -1,0 +1,7 @@
+{
+    "lastLevel": 1,
+    "coins": 4.0,
+    "health": 1.0,
+    "playerName": "Rafael",
+    "checkpoint": ""
+}

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Itens;
+using Items;
 using Items;
 
 public class ItemCollectableCoin : ItemCollectableBase

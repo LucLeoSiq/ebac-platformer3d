@@ -1,5 +1,5 @@
 using DG.Tweening;
-using Itens;
+using Items;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -5,15 +5,13 @@ using TMPro;
 using Ebac.Core.Singleton;
 using JetBrains.Annotations;
 
-namespace Itens
+namespace Items
 {
     public enum ItemType
     {
         COIN,
         LIFE_PACK
     }
-
-
 
     public class ItemManager : Singleton<ItemManager>
     {
@@ -22,6 +20,12 @@ namespace Itens
         private void Start()
         {
             Reset();
+        }
+
+        private void LoadItemsFromSave()
+        {
+            AddByType(ItemType.COIN, (int) SaveManager.Instance.Setup.coins);
+            AddByType(ItemType.LIFE_PACK, (int)SaveManager.Instance.Setup.health);
         }
 
         private void Reset()
