@@ -15,6 +15,8 @@ public class SaveManager : Singleton<SaveManager>
 
     public Action<SaveSetup> FileLoaded;
 
+    public SaveManager() : base(true) { }
+
     public SaveSetup Setup
     {
         get { return _saveSetup; }
@@ -29,13 +31,14 @@ public class SaveManager : Singleton<SaveManager>
     private void CreateNewSave()
     {
         _saveSetup = new SaveSetup();
-        _saveSetup.lastLevel = 2;
+        _saveSetup.lastLevel = 1;
         _saveSetup.playerName = "Rafael";
     }
 
     private void Start()
     {
         Invoke(nameof(Load), .1f);
+        Load();
     }
 
     [NaughtyAttributes.Button]

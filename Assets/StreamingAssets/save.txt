@@ -2,6 +2,6 @@
     "lastLevel": 2,
     "lastCheckpoint": 1,
     "coins": 0.0,
-    "health": 0.0,
+    "health": 1.0,
     "playerName": "Rafael"
 }

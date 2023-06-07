@@ -9,12 +9,26 @@ namespace Ebac.Core.Singleton
     {
         public static T Instance;
 
+        private bool _persistent = false;
+
         protected virtual void Awake()
         {
             if (Instance == null)
+            {
                 Instance = GetComponent<T>();
+                if (_persistent)
+                {
+                    DontDestroyOnLoad(gameObject);
+                }
+            }
             else
                 Destroy(gameObject);
+        }
+
+
+        public Singleton(bool persistent = false)
+        {
+            _persistent = persistent;
         }
     }
 }

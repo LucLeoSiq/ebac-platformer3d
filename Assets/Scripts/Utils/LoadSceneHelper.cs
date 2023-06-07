@@ -19,6 +19,7 @@ public class LoadSceneHelper : MonoBehaviour
     {
         SceneManager.LoadScene(level);
         SaveManager.Instance.Load();
+        Debug.Log("Level Loaded");
     }
 }
     
