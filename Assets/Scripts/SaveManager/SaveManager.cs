@@ -90,7 +90,6 @@ public class SaveManager : Singleton<SaveManager>
             fileLoaded = File.ReadAllText(_path);
             _saveSetup = JsonUtility.FromJson<SaveSetup>(fileLoaded);
             lastLevel = _saveSetup.lastLevel;
-            //Debug.Log("Coins:" + _saveSetup.coins);
         }
         else
         {
@@ -99,18 +98,6 @@ public class SaveManager : Singleton<SaveManager>
         }
         
         FileLoaded?.Invoke(_saveSetup);
-    }
-
-    [NaughtyAttributes.Button]
-    private void SaveLevelOne()
-    {
-        SaveLastLevel(1);
-    }
-
-    [NaughtyAttributes.Button]
-    private void SaveLevelFive()
-    {
-        SaveLastLevel(5);
     }
 
     [System.Serializable]
