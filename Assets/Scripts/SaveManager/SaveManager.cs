@@ -67,6 +67,13 @@ public class SaveManager : Singleton<SaveManager>
         Save();
     }
 
+    public void SaveLastCheckpoint(int checkpointKey)
+    {
+        _saveSetup.lastCheckpoint = checkpointKey;
+        SaveItems();
+        Save();
+    }
+
     private void SaveFile(string json)
     {
        Debug.Log(_path);
@@ -83,6 +90,7 @@ public class SaveManager : Singleton<SaveManager>
             fileLoaded = File.ReadAllText(_path);
             _saveSetup = JsonUtility.FromJson<SaveSetup>(fileLoaded);
             lastLevel = _saveSetup.lastLevel;
+            //Debug.Log("Coins:" + _saveSetup.coins);
         }
         else
         {
@@ -109,10 +117,12 @@ public class SaveManager : Singleton<SaveManager>
     public class SaveSetup
     {
         public int lastLevel;
+        public int lastCheckpoint;
+        
         public float coins;
         public float health;
 
         public string playerName;
-        //public string checkpoint;
+        
     }
 }
