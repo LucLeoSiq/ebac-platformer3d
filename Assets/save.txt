@@ -1,4 +1,0 @@
-{
-    "lastLevel": 2,
-    "playerName": "Rafael"
-}

@@ -5,7 +5,7 @@ using UnityEngine;
 public class CheckPointBase : MonoBehaviour
 {
     public MeshRenderer meshRenderer;
-    public int key = 01;
+    public int key = 0;
 
     private bool checkpointActivated = false;
     private string checkpointKey = "CheckpointKey";
@@ -23,6 +23,7 @@ public class CheckPointBase : MonoBehaviour
     {
         TurnItOn();
         SaveCheckPoint();
+        SaveManager.Instance.SaveLastCheckpoint(key);
     }
 
     [NaughtyAttributes.Button]

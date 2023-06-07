@@ -581,7 +581,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74510116}
   m_LocalRotation: {x: 0.30007443, y: -0, z: -1.1641532e-10, w: 0.95391583}
-  m_LocalPosition: {x: -24.954647, y: 15.735145, z: 2.0625637}
+  m_LocalPosition: {x: -24.954647, y: 15.735142, z: 2.0625525}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3898,11 +3898,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2472983557464698623, guid: fdad0acabf951ae4c9fc8d2e0260929d, type: 3}
       propertyPath: _saveSetup.coins
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2472983557464698623, guid: fdad0acabf951ae4c9fc8d2e0260929d, type: 3}
       propertyPath: _saveSetup.health
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2472983557464698623, guid: fdad0acabf951ae4c9fc8d2e0260929d, type: 3}
       propertyPath: _saveSetup.lastLevel
@@ -3912,7 +3912,8 @@ PrefabInstance:
       propertyPath: _saveSetup.playerName
       value: Rafael
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2472983557464698623, guid: fdad0acabf951ae4c9fc8d2e0260929d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fdad0acabf951ae4c9fc8d2e0260929d, type: 3}
 --- !u!1 &605120065
 GameObject:
@@ -16529,8 +16530,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898382567}
-  m_LocalRotation: {x: -0.07513892, y: 0.7510805, z: -0.5449766, w: 0.36501053}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.07513892, y: 0.7510805, z: -0.54497665, w: 0.36501062}
+  m_LocalPosition: {x: 7.8061757e-16, y: -0.0000025817405, z: 0.0000029658097}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27927,8 +27928,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114304869}
-  m_LocalRotation: {x: -0.06850471, y: 0.74107033, z: -0.5585126, w: 0.3663135}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.06850473, y: 0.7410703, z: -0.5585126, w: 0.3663137}
+  m_LocalPosition: {x: 7.8061757e-16, y: -0.0000025817405, z: 0.0000029658097}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -29535,6 +29536,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!1 &1230575046 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2472983557464698620, guid: fdad0acabf951ae4c9fc8d2e0260929d, type: 3}
+  m_PrefabInstance: {fileID: 577114229}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1230575049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230575046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea9b35de407ccb04e9e9dde020b5be09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _saveSetup:
+    lastLevel: 1
+    lastCheckpoint: 0
+    coins: 0
+    health: 1
+    playerName: Rafael
+  lastLevel: 1
+  lastCheckpoint: 0
 --- !u!1001 &1231023638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31953,8 +31979,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500100153}
-  m_LocalRotation: {x: 0.08474415, y: 0.9040924, z: -0.21214579, w: 0.3611504}
-  m_LocalPosition: {x: 398.4456, y: 11.559999, z: 43.47072}
+  m_LocalRotation: {x: 0.084744215, y: 0.9040923, z: -0.21214585, w: 0.36115053}
+  m_LocalPosition: {x: 398.4456, y: 11.559999, z: 43.470707}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33062,8 +33088,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1662104538}
-  m_LocalRotation: {x: -0.061830346, y: 0.73078865, z: -0.5718999, w: 0.36749905}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.061830346, y: 0.7307886, z: -0.5718999, w: 0.36749917}
+  m_LocalPosition: {x: 1.3660808e-15, y: -0.000004518046, z: 0.000005190167}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -43255,7 +43281,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727039242}
-  m_LocalRotation: {x: 0.05902602, y: -0.0017400321, z: 0.0005007911, w: 0.9982548}
+  m_LocalRotation: {x: 0.05902602, y: -0.001740069, z: 0.0005008018, w: 0.9982548}
   m_LocalPosition: {x: -0.6866944, y: -4.2716355, z: -36.772846}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

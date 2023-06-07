@@ -11,6 +11,7 @@ public class SaveManager : Singleton<SaveManager>
     private string _path = Application.streamingAssetsPath + "/save.txt";
 
     public int lastLevel;
+    public int lastCheckpoint;
 
     public Action<SaveSetup> FileLoaded;
 
@@ -67,6 +68,13 @@ public class SaveManager : Singleton<SaveManager>
         Save();
     }
 
+    public void SaveLastCheckpoint(int checkpointKey)
+    {
+        _saveSetup.lastCheckpoint = checkpointKey;
+        SaveItems();
+        Save();
+    }
+
     private void SaveFile(string json)
     {
        Debug.Log(_path);
@@ -74,7 +82,7 @@ public class SaveManager : Singleton<SaveManager>
     }
 
     [NaughtyAttributes.Button]
-    private void Load()
+    public void Load()
     {
         string fileLoaded = "";
 
@@ -82,7 +90,12 @@ public class SaveManager : Singleton<SaveManager>
         {
             fileLoaded = File.ReadAllText(_path);
             _saveSetup = JsonUtility.FromJson<SaveSetup>(fileLoaded);
+            
             lastLevel = _saveSetup.lastLevel;
+            lastCheckpoint = _saveSetup.lastCheckpoint;
+
+            CheckpointManager.Instance.SaveCheckPoint(lastCheckpoint);
+            Player.Instance.Respawn(); 
         }
         else
         {
@@ -93,26 +106,16 @@ public class SaveManager : Singleton<SaveManager>
         FileLoaded?.Invoke(_saveSetup);
     }
 
-    [NaughtyAttributes.Button]
-    private void SaveLevelOne()
-    {
-        SaveLastLevel(1);
-    }
-
-    [NaughtyAttributes.Button]
-    private void SaveLevelFive()
-    {
-        SaveLastLevel(5);
-    }
-
     [System.Serializable]
     public class SaveSetup
     {
         public int lastLevel;
+        public int lastCheckpoint;
+        
         public float coins;
         public float health;
 
         public string playerName;
-        //public string checkpoint;
+        
     }
 }
