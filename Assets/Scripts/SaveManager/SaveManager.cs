@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ebac.Core.Singleton;
 using System;
+using UnityEngine.SceneManagement;
 
 public class SaveManager : Singleton<SaveManager>
 {
@@ -37,8 +38,7 @@ public class SaveManager : Singleton<SaveManager>
 
     private void Start()
     {
-        Invoke(nameof(Load), .1f);
-        Load();
+        //Invoke(nameof(Load), .1f);
     }
 
     [NaughtyAttributes.Button]
@@ -93,12 +93,19 @@ public class SaveManager : Singleton<SaveManager>
         {
             fileLoaded = File.ReadAllText(_path);
             _saveSetup = JsonUtility.FromJson<SaveSetup>(fileLoaded);
-            
+
             lastLevel = _saveSetup.lastLevel;
             lastCheckpoint = _saveSetup.lastCheckpoint;
 
-            CheckpointManager.Instance.SaveCheckPoint(lastCheckpoint);
-            Player.Instance.Respawn(); 
+            if (SceneManager.GetActiveScene().buildIndex == 1)
+            {
+                CheckpointManager.Instance.SaveCheckPoint(lastCheckpoint);
+                Player.Instance.Respawn();
+            }
+            else
+            {
+                SceneManager.sceneLoaded += GameSceneLoadedCallback;
+            }
         }
         else
         {
@@ -108,6 +115,17 @@ public class SaveManager : Singleton<SaveManager>
         
         FileLoaded?.Invoke(_saveSetup);
     }
+
+    private void GameSceneLoadedCallback(Scene loadedScene, LoadSceneMode loadSceneMode)
+    {
+        if(loadedScene.buildIndex == 1)
+        {
+            CheckpointManager.Instance.SaveCheckPoint(lastCheckpoint);
+            Player.Instance.Respawn();
+            SceneManager.sceneLoaded -= GameSceneLoadedCallback;
+        }
+    }
+
 
     [System.Serializable]
     public class SaveSetup
