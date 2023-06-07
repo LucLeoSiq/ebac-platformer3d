@@ -11,6 +11,7 @@ public class SaveManager : Singleton<SaveManager>
     private string _path = Application.streamingAssetsPath + "/save.txt";
 
     public int lastLevel;
+    public int lastCheckpoint;
 
     public Action<SaveSetup> FileLoaded;
 
@@ -89,7 +90,12 @@ public class SaveManager : Singleton<SaveManager>
         {
             fileLoaded = File.ReadAllText(_path);
             _saveSetup = JsonUtility.FromJson<SaveSetup>(fileLoaded);
+            
             lastLevel = _saveSetup.lastLevel;
+            lastCheckpoint = _saveSetup.lastCheckpoint;
+
+            CheckpointManager.Instance.SaveCheckPoint(lastCheckpoint);
+            Player.Instance.Respawn(); 
         }
         else
         {
