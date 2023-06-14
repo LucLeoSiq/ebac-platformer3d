@@ -46,10 +46,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e07aaf933857d4887f177aeeef6a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxType: 1
+  itemType: 0
   compareTag: Player
   particleSystem: {fileID: 0}
   timeToHide: 3
   graphicItem: {fileID: 3446076642455309611}
+  collider: {fileID: 0}
   audioSource: {fileID: 0}
 --- !u!135 &2527510752364439503
 SphereCollider:
