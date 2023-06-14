@@ -11,7 +11,7 @@ public class SFXPool : Singleton<SFXPool>
 
     private int _index = 0;
 
-    private void Awake()
+    private void Start()
     {
         CreatePool();
     }
