@@ -7,6 +7,7 @@ public class CheckPointBase : MonoBehaviour
 
     private bool checkpointActivated = false;
     private string checkpointKey = "CheckpointKey";
+    public SFXType sfxType;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -24,10 +25,16 @@ public class CheckPointBase : MonoBehaviour
         SaveManager.Instance.SaveLastCheckpoint(key);
     }
 
+    private void PlaySFX()
+    {
+        SFXPool.Instance.Play(sfxType);
+    }
+
     [NaughtyAttributes.Button]
     private void TurnItOn()
     {
         meshRenderer.material.SetColor("_EmissionColor", Color.white);
+        PlaySFX();
     }
     
     [NaughtyAttributes.Button]
