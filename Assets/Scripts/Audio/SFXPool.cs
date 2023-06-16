@@ -7,7 +7,7 @@ public class SFXPool : Singleton<SFXPool>
 {
     private List<AudioSource> _audioSourceList;
 
-    public int poolSize = 10;
+    public int poolSize = 30;
 
     private int _index = 0;
 
