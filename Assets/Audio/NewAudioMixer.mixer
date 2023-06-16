@@ -68,7 +68,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ambiance
+  m_Name: Music
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: bfb821c0d3e083b4294dbae6371c364e
   m_Children: []
@@ -134,8 +134,8 @@ AudioMixerGroupController:
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: f1eb8e695b9f5c1478b6452a085b810c
   m_Children:
-  - {fileID: -3712446815822434758}
   - {fileID: -2803690396873324627}
+  - {fileID: -3712446815822434758}
   m_Volume: a01efde7dfe71fd46b407af0d96e7d38
   m_Pitch: 93b5dd9c25c56f942bbca63ecfd88050
   m_Send: 00000000000000000000000000000000

@@ -7,6 +7,7 @@ using UnityEngine.Windows;
 public class PlayerAbilityShoot : PlayerAbilityBase
 {
     public List<UIFillUpdater> uIGuUpdaters;
+    public SFXType sfxType;
 
     public GunBase gunBase;
     public Transform gunPosition;
@@ -24,6 +25,11 @@ public class PlayerAbilityShoot : PlayerAbilityBase
         inputs.Gameplay.Shoot.canceled += cts => CancelShoot();
     }
 
+    private void PlaySFX()
+    {
+        SFXPool.Instance.Play(sfxType);
+    }
+
     private void CreateGun()
     {
         _currentGun = Instantiate(gunBase, gunPosition);
@@ -33,6 +39,7 @@ public class PlayerAbilityShoot : PlayerAbilityBase
 
     private void StartShoot()
     {
+        PlaySFX();
         _currentGun.StartShoot();
         _flashColor ?. Flash();
         Debug.Log("Start Shoot");
